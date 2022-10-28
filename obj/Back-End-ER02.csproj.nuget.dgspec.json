@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto\\Back-End-ER02\\Back-End-ER02.csproj": {}
+    "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto2\\Back-End-ER02\\Back-End-ER02.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto\\Back-End-ER02\\Back-End-ER02.csproj": {
+    "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto2\\Back-End-ER02\\Back-End-ER02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto\\Back-End-ER02\\Back-End-ER02.csproj",
+        "projectUniqueName": "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto2\\Back-End-ER02\\Back-End-ER02.csproj",
         "projectName": "Back-End-ER02",
-        "projectPath": "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto\\Back-End-ER02\\Back-End-ER02.csproj",
+        "projectPath": "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto2\\Back-End-ER02\\Back-End-ER02.csproj",
         "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto\\Back-End-ER02\\obj\\",
+        "outputPath": "C:\\Users\\Ale\\Downloads\\codigoEncontroRemoto2\\Back-End-ER02\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config"
