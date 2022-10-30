@@ -1,6 +1,6 @@
 using Back_End_ER02.Interfaces;
 
-namespace Back_End_ER02.Classes
+namespace Back_End_ER03.Classes
 {
     public class PessoaJuridica : Pessoa, IPessoaJuridica
     {
