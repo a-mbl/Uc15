@@ -1,28 +1,45 @@
 ﻿using Back_End_ER03.Classes;
 
-PessoaFisica novaPF = new PessoaFisica();
-Endereco novoEndPf = new Endereco();
+// PessoaFisica novaPF = new PessoaFisica();
+// Endereco novoEndPf = new Endereco();
 
-novaPF.nome = "Aley";
-novaPF.cpf = "3510521455";
-novaPF.rendimento = 6600.5f;
-novaPF.dataNasc = new DateTime(2001, 12, 04);
+// novaPF.nome = "Aley";
+// novaPF.cpf = "3510521455";
+// novaPF.rendimento = 6600.5f;
+// novaPF.dataNasc = new DateTime(2001, 12, 04);
 
-novoEndPf.logradouro = "Rua Niteroi";
-novoEndPf.numero  = 180;
-novoEndPf.complemento = "Escola Senai";
-novoEndPf.endComercial = true;
+// novoEndPf.logradouro = "Rua Niteroi";
+// novoEndPf.numero  = 180;
+// novoEndPf.complemento = "Escola Senai";
+// novoEndPf.endComercial = true;
 
-novaPF.endereco = novoEndPf;
+// novaPF.endereco = novoEndPf;
+
+//Console.WriteLine(@$"
+
+//Nome: {novaPF.nome}
+//Rendimento: {novaPF.rendimento}
+// CPF: {novaPF.cpf}
+// Logradouro: {novaPF.endereco.logradouro}
+// Número: {novaPF.endereco.numero}");
+
+PessoaJuridica novaPj = new PessoaJuridica();
+Endereco novoEndPj = new Endereco();
+
+novaPj.nome = "Nome Pj";
+novaPj.razaoSocial = "Razão Social PJ";
+novaPj.cnpj = "00.476.645/0001-03";
+
+novoEndPj.logradouro = "Rua Niteroi";
+novoEndPj.numero = 180;
+
+novaPj.endereco = novoEndPj;
 
 Console.WriteLine(@$"
-
-Nome: {novaPF.nome}
-Rendimento: {novaPF.rendimento}
-CPF: {novaPF.cpf}
-Logradouro: {novaPF.endereco.logradouro}
-Número: {novaPF.endereco.numero}");
-
+Nome: {novaPj.nome}
+Razão Social: {novaPj.razaoSocial}
+CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
+");
 
 
 
@@ -52,8 +69,8 @@ Número: {novaPF.endereco.numero}");
 // DateTime date3 = DateTime.Today;
 // Console.WriteLine(date3);
 
-DateTime temp = new DateTime(2005, 01, 01);
-Console.WriteLine(novaPF.ValidarDataNasc("04/12/2001"));
+// DateTime temp = new DateTime(2005, 01, 01);
+// Console.WriteLine(novaPF.ValidarDataNasc("04/12/2001"));
 
 
 
