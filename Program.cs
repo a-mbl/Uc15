@@ -1,46 +1,104 @@
-﻿using Back_End_ER03.Classes;
+﻿using Back_End_ER.Classes;
+using Back_End_ER03.Classes;
 
-// PessoaFisica novaPF = new PessoaFisica();
-// Endereco novoEndPf = new Endereco();
+Utils.BarraCarregamento("Carregando");
 
-// novaPF.nome = "Aley";
-// novaPF.cpf = "3510521455";
-// novaPF.rendimento = 6600.5f;
-// novaPF.dataNasc = new DateTime(2001, 12, 04);
-
-// novoEndPf.logradouro = "Rua Niteroi";
-// novoEndPf.numero  = 180;
-// novoEndPf.complemento = "Escola Senai";
-// novoEndPf.endComercial = true;
-
-// novaPF.endereco = novoEndPf;
-
-//Console.WriteLine(@$"
-
-//Nome: {novaPF.nome}
-//Rendimento: {novaPF.rendimento}
-// CPF: {novaPF.cpf}
-// Logradouro: {novaPF.endereco.logradouro}
-// Número: {novaPF.endereco.numero}");
-
-PessoaJuridica novaPj = new PessoaJuridica();
-Endereco novoEndPj = new Endereco();
-
-novaPj.nome = "Nome Pj";
-novaPj.razaoSocial = "Razão Social PJ";
-novaPj.cnpj = "00.476.645/0001-03";
-
-novoEndPj.logradouro = "Rua Niteroi";
-novoEndPj.numero = 180;
-
-novaPj.endereco = novoEndPj;
-
+string? opcao;
+do
+{
+Console.Clear();
 Console.WriteLine(@$"
-Nome: {novaPj.nome}
-Razão Social: {novaPj.razaoSocial}
-CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
+===============================================
+|        Bem-vindo ao Sistema de Cadastro     |
+|            Pessoa física & jurídica         |
+===============================================
+|                                             |
+|           1 Pessoa física                   |
+|                                             |
+|           2 Pessoa jurídica                 |
+|                                             |
+|           0 Sair                            |
+===============================================
 ");
 
+
+opcao = Console.ReadLine();
+
+switch (opcao)
+{
+    case "1":
+        Console.WriteLine($"Pessoa física");
+        PessoaFisica novaPF = new PessoaFisica();
+        Endereco novoEndPf = new Endereco();
+
+        novaPF.nome = "Aley";
+        novaPF.cpf = "3510521455";
+        novaPF.rendimento = 6600.5f;
+        novaPF.dataNasc = new DateTime(2001, 12, 04);
+
+
+        novoEndPf.logradouro = "Rua Niteroi";
+        novoEndPf.numero  = 180;
+        novoEndPf.complemento = "Escola Senai";
+        novoEndPf.endComercial = true;
+
+        novaPF.endereco = novoEndPf;
+
+        Console.WriteLine(@$"
+
+        Nome: {novaPF.nome}
+        Rendimento: {novaPF.rendimento}
+        CPF: {novaPF.cpf}
+        Logradouro: {novaPF.endereco.logradouro}
+        Número: {novaPF.endereco.numero}");
+        Thread.Sleep(3000);
+        break;
+
+    case "2":
+        Console.WriteLine($"Pessoa jurídica");
+        PessoaJuridica novaPj = new PessoaJuridica();
+        Endereco novoEndPj = new Endereco();
+
+        novaPj.nome = "Nome Pj";
+        novaPj.razaoSocial = "Razão Social PJ";
+        novaPj.cnpj = "00.476.645/0001-03";
+
+        novoEndPj.logradouro = "Rua Niteroi";
+        novoEndPj.numero = 180;
+
+        novaPj.endereco = novoEndPj;
+
+        Console.WriteLine(@$"
+        Nome: {novaPj.nome}
+        Razão Social: {novaPj.razaoSocial}
+        CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
+        ");
+        Console.WriteLine($"Insira ENTER para sair");
+        Console.ReadLine();
+        break;
+
+    case "0":
+        Console.WriteLine($"Finalizado");
+        
+        break;
+
+    default:
+        Console.WriteLine($"Opção Inválida");
+        
+        break;
+}
+
+
+    
+} while (opcao !="0");
+
+Utils.BarraCarregamento("Finalizando");
+
+
+
+
+// Thread.Sleep(4000);
+// Console.Clear();
 
 
 // Console.WriteLine(novaPF.nome);
