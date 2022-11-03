@@ -29,36 +29,42 @@ namespace Back_End_ER03.Classes
             }
         }
 
-        internal void ValidarCnpj()
-        {
-            throw new NotImplementedException();
-        }
-
+        //XX.XXX.XXX/0001-XX ----- XXXXXXXX0001XX
         public bool ValidarCnpj(string cnpj)
-        { // 00.476.645/0001-03
-            bool retornoCnpjValido = Regex.IsMatch(cnpj, @"^(\d{14})|(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})$");
+        {
 
-            if (retornoCnpjValido)
+            // = Atribução
+            // == Comparação
+            // === Comparação exata 
+            bool retornoCnpjValido = Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)");
+
+            // if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
+            if (retornoCnpjValido == true)
             {
-                string subStringCnpj14 = cnpj.Substring(8, 4);
-
-                if (subStringCnpj14 == "0001")
+                if (cnpj.Length == 18)
                 {
-                    return true;
-                }
+                    string subStringCnpj = cnpj.Substring(11, 4);
 
+                    if (subStringCnpj == "0001")
+                    {
+                        return true;
+                    }
+
+
+                }
+                else if (cnpj.Length == 14)
+                {
+                    string subStringCnpj = cnpj.Substring(8, 4);
+
+                    if (subStringCnpj == "0001")
+                    {
+                        return true;
+                    }
+                }
             }
-
-            string subStringCnpj18 = cnpj.Substring(11, 4);
-
-                if (subStringCnpj18 == "0001")
-                {
-                   return true;
-                }
 
             return false;
 
         }
-        
     }
 }
