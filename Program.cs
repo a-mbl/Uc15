@@ -26,6 +26,7 @@ do
 
     opcao = Console.ReadLine();
 
+    IEnumerable<PessoaJuridica> listaExibicaoPj = null;
     switch (opcao)
     {
         case "1":
@@ -52,6 +53,8 @@ do
                 {
                     case "1":
 
+                        Console.Clear();
+
                         PessoaFisica novaPf = new PessoaFisica();
                         Endereco novoEndPf = new Endereco();
 
@@ -59,62 +62,73 @@ do
                         novaPf.nome = Console.ReadLine();
 
 
-                        bool dataValida;
-                        do
+                        // bool dataValida;
+                        // do
+                        // {
+
+                        //     Console.WriteLine($"Digite a data de nascimento - dd/mm/aaaa");
+                        //     string? dataNasc = Console.ReadLine();
+
+                        //     dataValida = novaPf.ValidarDataNasc(dataNasc);
+
+                        //     if (dataValida)
+                        //     {
+                        //         DateTime.TryParse(dataNasc, out DateTime dataConvertida);
+                        //         novaPf.dataNasc = dataConvertida;
+                        //     }
+                        //     else
+                        //     {
+
+                        //         Console.ForegroundColor = ConsoleColor.DarkRed;
+                        //         Console.WriteLine($"Data inválida, insira um valor válido - dd/mm/aaaa");
+                        //         Console.ResetColor();
+                        //         Thread.Sleep(3000);
+
+                        //     }
+
+                        // } while (dataValida == false); //repetir laço
+
+                        // Console.WriteLine($"Digite o número de CPF; pressione ENTER ao final");
+                        // novaPf.cpf = Console.ReadLine();
+
+                        // Console.WriteLine($"Digite o valor do rendimento mensal (somente números)");
+                        // novaPf.rendimento = float.Parse(Console.ReadLine());
+
+                        // Console.WriteLine($"Digite o logradouro");
+                        // novoEndPf.logradouro = Console.ReadLine();
+
+                        // Console.WriteLine($"Digite o número");
+                        // novoEndPf.numero = int.Parse(Console.ReadLine());
+
+                        // Console.WriteLine($"Digite o complemento");
+                        // novoEndPf.complemento = Console.ReadLine();
+
+                        // Console.WriteLine($"Este endereço é comercial?   S/N");
+                        // String endCom = Console.ReadLine().ToUpper();
+
+                        // if (endCom == "S")
+                        // {
+                        //     novoEndPf.endComercial = true;
+                        // }
+                        // else
+                        // {
+                        //     novoEndPf.endComercial = false;
+                        // }
+
+                        // novaPf.endereco = novoEndPf;
+
+                        // listaPf.Add(novaPf);
+
+                        //exemplo 1
+                        // StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt);
+                        // sw.WriteLine(novaPf.Nome);
+                        // sw.Close();
+
+
+                        using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
                         {
-
-                            Console.WriteLine($"Digite a data de nascimento - dd/mm/aaaa");
-                            string? dataNasc = Console.ReadLine();
-
-                            dataValida = novaPf.ValidarDataNasc(dataNasc);
-
-                            if (dataValida)
-                            {
-                                DateTime.TryParse(dataNasc, out DateTime dataConvertida);
-                                novaPf.dataNasc = dataConvertida;
-                            }
-                            else
-                            {
-
-                                Console.ForegroundColor = ConsoleColor.DarkRed;
-                                Console.WriteLine($"Data inválida, insira um valor válido - dd/mm/aaaa");
-                                Console.ResetColor();
-                                Thread.Sleep(3000);
-
-                            }
-
-                        } while (dataValida == false); //repetir laço
-
-                        Console.WriteLine($"Digite o número de CPF; pressione ENTER ao final");
-                        novaPf.cpf = Console.ReadLine();
-
-                        Console.WriteLine($"Digite o valor do rendimento mensal (somente números)");
-                        novaPf.rendimento = float.Parse(Console.ReadLine());
-
-                        Console.WriteLine($"Digite o logradouro");
-                        novoEndPf.logradouro = Console.ReadLine();
-
-                        Console.WriteLine($"Digite o número");
-                        novoEndPf.numero = int.Parse(Console.ReadLine());
-
-                        Console.WriteLine($"Digite o complemento");
-                        novoEndPf.complemento = Console.ReadLine();
-
-                        Console.WriteLine($"Este endereço é comercial?   S/N");
-                        String endCom = Console.ReadLine().ToUpper();
-
-                        if (endCom == "S")
-                        {
-                            novoEndPf.endComercial = true;
+                            sw.WriteLine(novaPf.nome);
                         }
-                        else
-                        {
-                            novoEndPf.endComercial = false;
-                        }
-
-                        novaPf.endereco = novoEndPf;
-
-                        listaPf.Add(novaPf);
 
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine($"Cadastro gravado");
@@ -124,137 +138,167 @@ do
                         break;
 
                     case "2":
-                        Console.Clear();
-                        if (listaPf.Count > 0)
-                        {
+                        //                         Console.Clear();
+                        //                         if (listaPf.Count > 0)
+                        //                         {
 
-                            foreach (PessoaFisica cadaPessoa in listaPf)
+                        //                             foreach (PessoaFisica cadaPessoa in listaPf)
+                        //                             {
+                        //                                 Console.Clear();
+                        //                                 Console.WriteLine(@$"
+
+                        // Nome: {cadaPessoa.nome}
+                        // Endereço: {cadaPessoa.endereco.logradouro}, {cadaPessoa.endereco.numero}, {cadaPessoa.endereco.complemento}
+                        // Rendimento: {cadaPessoa.rendimento.ToString("C")}
+                        // Imposto a ser pago: {metodosPf.CalcularImposto(cadaPessoa.rendimento).ToString("C")}
+                        // CPF: {cadaPessoa.cpf}
+                        // Data Nasc.: {cadaPessoa.dataNasc.ToString("C")}
+
+                        // ");                            
+                        //                             Console.WriteLine($"Aperte ENTER para continuar");
+                        //                             Console.ReadLine();
+                        //                             }
+
+                        //                         }
+                        //                         else
+                        //                         {
+                        //                             Console.Clear();
+                        //                             Console.ForegroundColor = ConsoleColor.Green;
+                        //                             Console.WriteLine($"Lista vazia, cadastre uma nova P.F.");
+                        //                             Console.ResetColor();
+                        //                             Thread.Sleep(2000); 
+                        //                         }
+
+                        using (StreamReader sr = new StreamReader("Aley.txt"))
+                        {
+                            string linha;
+
+                            while ((linha = sr.ReadLine()) != null)
                             {
-                                Console.Clear();
-                                Console.WriteLine(@$"
-
-Nome: {cadaPessoa.nome}
-Endereço: {cadaPessoa.endereco.logradouro}, {cadaPessoa.endereco.numero}, {cadaPessoa.endereco.complemento}
-Rendimento: {cadaPessoa.rendimento.ToString("C")}
-Imposto a ser pago: {metodosPf.CalcularImposto(cadaPessoa.rendimento).ToString("C")}
-CPF: {cadaPessoa.cpf}
-Data Nasc.: {cadaPessoa.dataNasc.ToString("C")}
-
-");                            
-                            Console.WriteLine($"Aperte ENTER para continuar");
+                                Console.WriteLine(linha);
+                            }
+                            Console.WriteLine($"Pressione ENTER para continuar");
                             Console.ReadLine();
-                            }
 
                         }
-                        else
-                        {
-                            Console.Clear();
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine($"Lista vazia, cadastre uma nova P.F.");
-                            Console.ResetColor();
-                            Thread.Sleep(2000); 
-                        }
 
                         break;
 
-                        
-                    case "0":
-    
-                            Console.Clear();
-                                Console.WriteLine($"Voltando ao menu anterior");
-                                Thread.Sleep(2000);
-                                break;
-
-                                default:
-                                Console.Clear();
-                                Console.ForegroundColor = ConsoleColor.DarkRed;
-                                Console.WriteLine($"Opção inválida, por favor seleicone uma opção válida");
-                                Console.ResetColor();
-                                Thread.Sleep(3000);
-
-                                break;
-                            }
-
-
-
-                        } while (opcaoPf != "0") ;
-
-
-
-
-                        // novaPF.nome = "Aley";
-                        // novaPF.cpf = "3510521455";
-                        // novaPF.rendimento = 6600.5f;
-                        // novaPF.dataNasc = new DateTime(2001, 12, 04);
-
-                        // novaPF.endereco = novoEndPf;
-
-                        // Console.WriteLine(@$"
-
-                        // Nome: {novaPF.nome}
-                        // Rendimento: {novaPF.rendimento}
-                        // CPF: {novaPF.cpf}
-                        // Logradouro: {novaPF.endereco.logradouro}
-                        // Número: {novaPF.endereco.numero}");
-                        // Thread.Sleep(3000);
-
-                        // Console.WriteLine($"Aperte ENTER para continuar");
-                        // Console.ReadLine();
-
-                        break;
-
-                    case "2":
-                        PessoaJuridica novaPj = new PessoaJuridica();
-                        PessoaJuridica metodosPj = new PessoaJuridica();
-                        Endereco novoEndPj = new Endereco();
-
-                        novaPj.nome = "Nome Pj";
-                        novaPj.razaoSocial = "Razão Social PJ";
-                        novaPj.cnpj = "00.476.645/0001-03";
-                        novaPj.rendimento = 10000.5f;
-
-                        novoEndPj.logradouro = "Rua Niteroi";
-                        novoEndPj.numero = 180;
-                        novoEndPj.complemento = "Senai Informática";
-                        novoEndPj.endComercial = true;
-
-                        novaPj.endereco = novoEndPj;
-
-                        Console.Clear();
-                        Console.WriteLine(@$"
-        Nome: {novaPj.nome}
-        Razão Social: {novaPj.razaoSocial}
-        CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
-        Endereço: {novaPj.endereco.logradouro}, nº {novaPj.endereco.numero}
-        Complemento: {novaPj.endereco.complemento}
-        ");
-
-                        Console.WriteLine($"Pressione ENTER para continuar");
-                        Console.ReadLine();
-
-                        break;
 
                     case "0":
-                        Console.Clear();
-                        Console.WriteLine($"Obrigado por utilizar nosso sistema!");
-                        Thread.Sleep(3000);
 
-                        Utils.BarraCarregamento("Finalizando");
+                        Console.Clear();
+                        Console.WriteLine($"Voltando ao menu anterior");
+                        Thread.Sleep(2000);
                         break;
 
                     default:
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine($"Opção Inválida, por favor insira corretamente");
+                        Console.WriteLine($"Opção inválida, por favor seleicone uma opção válida");
                         Console.ResetColor();
-                        Thread.Sleep(3000);                       
+                        Thread.Sleep(3000);
 
                         break;
                 }
 
 
 
-            } while (opcao != "0");
+            } while (opcaoPf != "0");
+
+
+
+
+            // novaPF.nome = "Aley";
+            // novaPF.cpf = "3510521455";
+            // novaPF.rendimento = 6600.5f;
+            // novaPF.dataNasc = new DateTime(2001, 12, 04);
+
+            // novaPF.endereco = novoEndPf;
+
+            // Console.WriteLine(@$"
+
+            // Nome: {novaPF.nome}
+            // Rendimento: {novaPF.rendimento}
+            // CPF: {novaPF.cpf}
+            // Logradouro: {novaPF.endereco.logradouro}
+            // Número: {novaPF.endereco.numero}");
+            // Thread.Sleep(3000);
+
+            // Console.WriteLine($"Aperte ENTER para continuar");
+            // Console.ReadLine();
+
+            break;
+
+        case "2":
+            PessoaJuridica novaPj = new PessoaJuridica();
+            PessoaJuridica metodosPj = new PessoaJuridica();
+            Endereco novoEndPj = new Endereco();
+
+            novaPj.nome = "Nome Pj";
+            novaPj.razaoSocial = "Razão Social PJ";
+            novaPj.cnpj = "00.476.645/0001-03";
+            novaPj.rendimento = 10000.5f;
+
+            novoEndPj.logradouro = "Rua Niteroi";
+            novoEndPj.numero = 180;
+            novoEndPj.complemento = "Senai Informática";
+            novoEndPj.endComercial = true;
+
+            novaPj.endereco = novoEndPj;
+
+            metodosPj.Inserir(novaPj);
+
+        //     Console.Clear();
+        //     Console.WriteLine(@$"
+        // Nome: {novaPj.nome}
+        // Razão Social: {novaPj.razaoSocial}
+        // CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
+        // Endereço: {novaPj.endereco.logradouro}, nº {novaPj.endereco.numero}
+        // Complemento: {novaPj.endereco.complemento}
+        // ");
+
+        //     Console.WriteLine($"Pressione ENTER para continuar");
+        //     Console.ReadLine();
+
+            foreach (PessoaJuridica cadaItem in listaExibicaoPj)
+            {
+                Console.Clear();
+                Console.WriteLine(@$"
+Nome: {cadaItem.nome}
+Razão social: {cadaItem.razaoSocial}
+// CNPJ: {cadaItem.cnpj}
+");
+                
+                Console.WriteLine($"Pressione ENTER apra continuar");
+                Console.ReadLine();
+                
+            }
+
+
+            break;
+
+        case "0":
+            Console.Clear();
+            Console.WriteLine($"Obrigado por utilizar nosso sistema!");
+            Thread.Sleep(3000);
+
+            Utils.BarraCarregamento("Finalizando");
+            break;
+
+        default:
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"Opção Inválida, por favor insira corretamente");
+            Console.ResetColor();
+            Thread.Sleep(3000);
+
+            break;
+    }
+
+
+
+} while (opcao != "0");
 
 
 
